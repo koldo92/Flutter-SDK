@@ -18,9 +18,9 @@ class LevelPlayNativeAdElementStyle {
 
   Map<String, dynamic>? toMap() {
     return <String, dynamic> {
-      "backgroundColor": backgroundColor?.value,
+      "backgroundColor": backgroundColor?.toARGB32(),
       "textSize": textSize,
-      "textColor": textColor?.value,
+      "textColor": textColor?.toARGB32(),
       "fontStyle": fontStyle?.toString(),
       "cornerRadius": cornerRadius,
     };

@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 #import "GeneratedPluginRegistrant.h"
 #import "NativeAdViewFactoryExample.h"
-#import "LevelPlayMediationPlugin.h"
+#import <unity_levelplay_mediation/LevelPlayMediationPlugin.h>
 
 @implementation AppDelegate
 

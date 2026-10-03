@@ -20,7 +20,7 @@ class LevelPlayNativeAdTemplateStyle {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      "mainBackgroundColor": mainBackgroundColor?.value,
+      "mainBackgroundColor": mainBackgroundColor?.toARGB32(),
       "titleStyle": titleStyle?.toMap(),
       "bodyStyle": bodyStyle?.toMap(),
       "advertiserStyle": advertiserStyle?.toMap(),

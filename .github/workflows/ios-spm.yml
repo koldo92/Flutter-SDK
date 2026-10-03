@@ -1,0 +1,43 @@
+name: iOS Swift Package Manager
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ios-spm:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Flutter derives the local Swift package identity from this path.
+          # Matching the Dart package name avoids a Flutter stable-tooling bug
+          # when the repository name differs from the plugin name.
+          path: unity_levelplay_mediation
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Enable Swift Package Manager
+        run: flutter config --enable-swift-package-manager
+
+      - name: Resolve plugin packages
+        working-directory: unity_levelplay_mediation
+        run: flutter pub get
+
+      - name: Test plugin
+        working-directory: unity_levelplay_mediation
+        run: flutter test
+
+      - name: Resolve example packages
+        working-directory: unity_levelplay_mediation/example
+        run: flutter pub get
+
+      - name: Test example
+        working-directory: unity_levelplay_mediation/example
+        run: flutter test
+
+      - name: Build iOS example
+        working-directory: unity_levelplay_mediation/example
+        run: flutter build ios --simulator --no-codesign

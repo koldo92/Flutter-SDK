@@ -1,13 +1,14 @@
 name: levelplay_mediation_example
 description: Demonstrates how to use the unity_levelplay_mediation plugin.
-version: 9.2.0
+version: 10.0.0
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: '>=2.17.0 <4.0.0'
+  sdk: '>=3.13.4 <4.0.0'
+  flutter: '>=3.47.5'
 
 dependencies:
   flutter:
@@ -18,7 +19,8 @@ dependencies:
     #   unity_levelplay_mediation: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
     # The example app is bundled with the plugin so we use a path dependency on
-    # the parent directory to use the current plugin's version.
+    # the parent directory to use the current plugin's version. Keep the
+    # checkout directory named unity_levelplay_mediation for Flutter SPM tooling.
     path: ../
 
   # The following adds the Cupertino Icons font to your application.
@@ -28,7 +30,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

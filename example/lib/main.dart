@@ -40,13 +40,17 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> with LevelPlayImpressionDataListener, LevelPlayInitListener, LevelPlayBannerAdViewListener {
+class _MyAppState extends State<MyApp>
+    implements
+        LevelPlayImpressionDataListener,
+        LevelPlayInitListener,
+        LevelPlayBannerAdViewListener {
   // Bottom banner ad variables
   GlobalKey<LevelPlayBannerAdViewState> bannerAdKey = GlobalKey<LevelPlayBannerAdViewState>();
   final adSize = LevelPlayAdSize.BANNER;
@@ -87,7 +91,7 @@ class _MyAppState extends State<MyApp> with LevelPlayImpressionDataListener, Lev
   Future<void> init() async {
 
     try {
-      LevelPlay.setFlutterVersion('3.32.7');
+      LevelPlay.setFlutterVersion('3.47.5');
       LevelPlay.addImpressionDataListener(this);
       await enableDebug();
 
@@ -256,14 +260,16 @@ class _MyAppState extends State<MyApp> with LevelPlayImpressionDataListener, Lev
 }
 /// LevelPlay Rewarded Video Section -------------------------------------------///
 class LevelPlayRewardedVideoSection extends StatefulWidget {
-  const LevelPlayRewardedVideoSection({Key? key}) : super(key: key);
+  const LevelPlayRewardedVideoSection({super.key});
 
   @override
-  _LevelPlayRewardedVideoSectionState createState() =>
+  State<LevelPlayRewardedVideoSection> createState() =>
       _LevelPlayRewardedVideoSectionState();
 }
 
-class _LevelPlayRewardedVideoSectionState extends State<LevelPlayRewardedVideoSection> with LevelPlayRewardedAdListener {
+class _LevelPlayRewardedVideoSectionState
+    extends State<LevelPlayRewardedVideoSection>
+    implements LevelPlayRewardedAdListener {
   // Instance of the Rewarded Ad
   final LevelPlayRewardedAd _rewardedAd = LevelPlayRewardedAd(adUnitId: rewardedAdUnitId);
 
@@ -342,13 +348,15 @@ class _LevelPlayRewardedVideoSectionState extends State<LevelPlayRewardedVideoSe
 
 /// LevelPlay Interstitial Ad Section ------------------------------------------///
 class LevelPlayInterstitialAdSection extends StatefulWidget {
-  const LevelPlayInterstitialAdSection({Key? key}) : super(key: key);
+  const LevelPlayInterstitialAdSection({super.key});
 
   @override
-  _LevelPlayInterstitialAdSectionState createState() => _LevelPlayInterstitialAdSectionState();
+  State<LevelPlayInterstitialAdSection> createState() => _LevelPlayInterstitialAdSectionState();
 }
 
-class _LevelPlayInterstitialAdSectionState extends State<LevelPlayInterstitialAdSection> with LevelPlayInterstitialAdListener {
+class _LevelPlayInterstitialAdSectionState
+    extends State<LevelPlayInterstitialAdSection>
+    implements LevelPlayInterstitialAdListener {
   final LevelPlayInterstitialAd _interstitialAd = LevelPlayInterstitialAd(adUnitId: interstitialAdUnitId);
 
   @override
@@ -421,13 +429,13 @@ class LevelPlayBannerAdSection extends StatefulWidget {
   final VoidCallback onDestroyBanner;
   
   const LevelPlayBannerAdSection({
-    Key? key,
+    super.key,
     required this.onLoadBanner,
     required this.onDestroyBanner,
-  }) : super(key: key);
+  });
 
   @override
-  _LevelPlayBannerAdSectionState createState() => _LevelPlayBannerAdSectionState();
+  State<LevelPlayBannerAdSection> createState() => _LevelPlayBannerAdSectionState();
 }
 
 class _LevelPlayBannerAdSectionState extends State<LevelPlayBannerAdSection> {
@@ -444,45 +452,6 @@ class _LevelPlayBannerAdSectionState extends State<LevelPlayBannerAdSection> {
     ]);
   }
 
-  @override
-  void onAdClicked(LevelPlayAdInfo adInfo) {
-    logMethodName('Banner Ad', 'onAdClicked', adInfo);
-  }
-
-  @override
-  void onAdCollapsed(LevelPlayAdInfo adInfo) {
-    logMethodName('Banner Ad', 'onAdCollapsed', adInfo);
-  }
-
-  @override
-  void onAdDisplayFailed(LevelPlayAdInfo adInfo, LevelPlayAdError error) {
-    logMethodName('Banner Ad', 'onAdDisplayFailed', '$error | $adInfo');
-  }
-
-  @override
-  void onAdDisplayed(LevelPlayAdInfo adInfo) {
-    logMethodName('Banner Ad', 'onAdDisplayed', adInfo);
-  }
-
-  @override
-  void onAdExpanded(LevelPlayAdInfo adInfo) {
-    logMethodName('Banner Ad', 'onAdExpanded', adInfo);
-  }
-
-  @override
-  void onAdLeftApplication(LevelPlayAdInfo adInfo) {
-    logMethodName('Banner Ad', 'onAdLeftApplication', adInfo);
-  }
-
-  @override
-  void onAdLoadFailed(LevelPlayAdError error) {
-    logMethodName('Banner Ad', 'onAdLoadFailed', error);
-  }
-
-  @override
-  void onAdLoaded(LevelPlayAdInfo adInfo) {
-    logMethodName('Banner Ad', 'onAdLoaded', adInfo);
-  }
 }
 
 /// Utils ----------------------------------------------------------------///
@@ -519,7 +488,7 @@ class ButtonInfo {
 
 class HorizontalButtons extends StatelessWidget {
   final List<ButtonInfo> buttons;
-  const HorizontalButtons(this.buttons, {Key? key}) : super(key: key);
+  const HorizontalButtons(this.buttons, {super.key});
 
   @override
   Widget build(BuildContext context) {

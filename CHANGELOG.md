@@ -1,3 +1,11 @@
+## 10.0.0
+
+### Breaking Changes
+- iOS now uses Swift Package Manager only. Flutter 3.47.5 and Dart 3.13.4 or later are required; CocoaPods integration has been removed.
+
+### SDK Updates
+- Integrates Unity LevelPlay iOS SDK 9.6.1 through Unity's official Swift package.
+
 ## 9.2.0
 
 ### Features
@@ -86,4 +94,3 @@ Fixed NullPointerException crash in Android when banner/native ad callbacks fire
 
 - Android SDK: 7.2.1.1
 - iOS SDK: 7.2.1.2
-

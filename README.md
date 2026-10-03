@@ -35,7 +35,21 @@ dependencies {
 
 ## iOS Configuration
 
-- The LevelPlay SDK pod is included in the plugin, so you do not have to add it to your Podfile.
+- The plugin integrates Unity's official [LevelPlay Swift package](https://github.com/ironsource-mobile/LevelPlay-Swift-Package) and resolves native iOS SDK **9.6.1**. Flutter's Swift Package Manager integration is required; CocoaPods is not supported for this plugin.
+- Requires Flutter 3.47.5 or later, Dart 3.13.4 or later, Xcode 26 or later, and an iOS 15 or later app deployment target. The plugin's SPM target and LevelPlay SDK support iOS 13; Flutter 3.47.5 enables SPM by default and requires iOS 15 for this example app. See [Flutter's plugin author guide](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors).
+- Unity's SPM package supplies the `UnityMediationSDK` product, its Ad Quality dependency, and its required system frameworks and libraries. Do not add a second LevelPlay SDK dependency.
+- Add `-ObjC` to the iOS app target's **Other Linker Flags**, as required by Unity's SPM integration instructions. The example app already sets this flag.
+
+Enable Flutter's Swift Package Manager integration, then resolve packages and build the iOS app:
+
+```sh
+flutter config --enable-swift-package-manager
+flutter pub get
+cd example
+flutter build ios --no-codesign
+```
+
+Applications may continue using CocoaPods for other plugins that have not migrated, but this plugin and LevelPlay SDK must be integrated through Swift Package Manager only. If you use a LevelPlay mediation adapter, add its official Swift package and select a version compatible with LevelPlay 9.6.1. The example uses Unity Ads Adapter 5.11.0 through its [official Swift package](https://github.com/ironsource-mobile/LevelPlay-UnityAds-Adapter-Swift-Package).
 
 ### <ins>SKAdNetwork Support</ins>
 
@@ -395,13 +409,5 @@ Make sure to follow [LevelPlay Knowledge Center](https://developers.ironsrc.com/
 
 Make sure to follow [LevelPlay Knowledge Center](https://developers.ironsrc.com/ironsource-mobile/ios/mediation-networks-ios/) document for additional setup.
 
-- Add pod dependencies to `YOUR_PROJECT/ios/Podfile: target 'Runner'`
+- Add each desired network adapter using its official Swift package, at a version compatible with LevelPlay 9.6.1. Do not add a LevelPlay SDK pod or CocoaPod adapter alongside the SPM SDK.
 - Add required settings to `YOUR_PROJECT/ios/Runner/info.plist`
-
-Note:
-
-- For Podfile, [transitive dependencies error](https://github.com/flutter/flutter/issues/20045) will be thrown with `use_frameworks!`. The workaround is to add the code below to Podfile:
-
-```ruby
-use_frameworks! :linkage => :static
-```

@@ -1,13 +1,13 @@
 name: unity_levelplay_mediation
 description: Unity LevelPlay ad mediation Flutter plugin. Monetize apps with rewarded video, interstitial, banner, and native ads.
-version: 9.2.0
+version: 10.0.0
 homepage: https://unity.com
 documentation: https://developers.is.com/ironsource-mobile/flutter/flutter-plugin/
 repository: https://github.com/ironsource-mobile/Flutter-SDK
 
 environment:
-  sdk: '>=2.17.0 <4.0.0'
-  flutter: '>=1.20.0'
+  sdk: '>=3.13.4 <4.0.0'
+  flutter: '>=3.47.5'
 
 dependencies:
   flutter:
@@ -18,8 +18,7 @@ dev_dependencies:
     sdk: flutter
   mockito: ^5.2.0
   build_runner: ^2.1.11
-  build_test: ^2.1.4
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # The following section is specific to Flutter.
 flutter:

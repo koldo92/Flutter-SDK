@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Flutter/Flutter.h>
 #import <IronSource/IronSource.h>
-#import "LevelPlayNativeAdViewFactory.h"
+#import <unity_levelplay_mediation/LevelPlayNativeAdViewFactory.h>
 
 /**
  * This class is an example of how to implement custom native ad.
