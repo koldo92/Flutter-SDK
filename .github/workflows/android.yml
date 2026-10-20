@@ -1,0 +1,44 @@
+name: Android example
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Check plugin and example Android compatibility
+        run: |
+          python3 - <<'PY'
+          import subprocess
+
+          for directory in ('.', 'example'):
+              result = subprocess.run(
+                  ['flutter', 'analyze', '--suggestions'],
+                  cwd=directory, text=True, stdout=subprocess.PIPE,
+                  stderr=subprocess.STDOUT, check=True,
+              )
+              print(result.stdout, flush=True)
+              # Flutter can exit successfully while reporting incompatibilities.
+              if '[✗]' in result.stdout or 'compatible java/gradle/agp/kgp' not in result.stdout:
+                  raise SystemExit(f'Android compatibility check failed in {directory}')
+          PY
+
+      - name: Build Android example
+        working-directory: example
+        run: flutter build apk --debug

@@ -1,0 +1,18 @@
+# Flutter and Dart generated files
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+/build/
+.flutter-plugins
+.flutter-plugins-dependencies
+# Keep the example app lockfile, but ignore the plugin's local resolution.
+/pubspec.lock
+
+# Local IDE and OS state
+.idea/
+*.iml
+.DS_Store
+
+# Flutter generates this local SPM dependency when building iOS.
+/ios/FlutterFramework/

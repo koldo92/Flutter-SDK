@@ -1,1 +1,15 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    // Flutter's plugin-root suggestions read KGP from settings.gradle.
+    // Keep this aligned with build.gradle and the example's settings.gradle.
+    id 'org.jetbrains.kotlin.android' version '2.2.20' apply false
+}
+
 rootProject.name = 'unity_levelplay_mediation'

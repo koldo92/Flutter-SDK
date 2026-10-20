@@ -3,7 +3,7 @@ description: Unity LevelPlay ad mediation Flutter plugin. Monetize apps with rew
 version: 10.0.0
 homepage: https://unity.com
 documentation: https://developers.is.com/ironsource-mobile/flutter/flutter-plugin/
-repository: https://github.com/ironsource-mobile/Flutter-SDK
+repository: https://github.com/koldo92/Flutter-SDK
 
 environment:
   sdk: '>=3.13.4 <4.0.0'

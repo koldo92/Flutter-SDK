@@ -30,6 +30,10 @@ jobs:
         working-directory: unity_levelplay_mediation
         run: flutter test
 
+      - name: Analyze plugin and example
+        working-directory: unity_levelplay_mediation
+        run: flutter analyze
+
       - name: Resolve example packages
         working-directory: unity_levelplay_mediation/example
         run: flutter pub get

@@ -17,7 +17,7 @@ flutter pub get unity_levelplay_mediation
 
 ## Android Configuration
 
-- The LevelPlay SDK dependency is included in the plugin, so you do not have to add manually to your build.gradle.
+- The plugin includes LevelPlay Android SDK **9.6.1** and uses Java 17, Kotlin 2.2.20, Android Gradle Plugin 8.11.1, and Gradle 8.14.5. Its native minimum is API 21; the example inherits Flutter 3.47's app minimum (API 24).
 
 ### Gradle Dependencies Required
 
@@ -49,7 +49,7 @@ cd example
 flutter build ios --no-codesign
 ```
 
-Applications may continue using CocoaPods for other plugins that have not migrated, but this plugin and LevelPlay SDK must be integrated through Swift Package Manager only. If you use a LevelPlay mediation adapter, add its official Swift package and select a version compatible with LevelPlay 9.6.1. The example uses Unity Ads Adapter 5.11.0 through its [official Swift package](https://github.com/ironsource-mobile/LevelPlay-UnityAds-Adapter-Swift-Package).
+The example app uses Swift Package Manager only and has no CocoaPods build steps. Host applications may use CocoaPods for unrelated plugins, but this plugin and LevelPlay SDK must be integrated through Swift Package Manager only. If you use a LevelPlay mediation adapter, add its official Swift package and select a version compatible with LevelPlay 9.6.1. The example uses Unity Ads Adapter 5.11.0 through its [official Swift package](https://github.com/ironsource-mobile/LevelPlay-UnityAds-Adapter-Swift-Package).
 
 ### <ins>SKAdNetwork Support</ins>
 
@@ -104,6 +104,21 @@ Future<void> checkATT() async {
 Read more about Apple's ATT and user privacy guideline [here](https://developer.apple.com/app-store/user-privacy-and-data-use/).
 
 ## General Usage
+
+### SDK 9.6.1 APIs
+
+Use `LevelPlayPrivacySettings.setGDPRConsent(consent)` to pass the user's consent choice. It replaces the deprecated per-network `setGDPRConsents` API.
+
+Register impression data listeners on each ad instance before loading ads:
+
+```dart
+interstitialAd.setImpressionDataListener(impressionListener);
+rewardedAd.setImpressionDataListener(impressionListener);
+```
+
+For banners, pass `impressionDataListener: impressionListener` to `LevelPlayBannerAdView`. Each listener implements `LevelPlayImpressionDataListener.onImpressionSuccess`. These per-instance listeners replace the global `LevelPlay.addImpressionDataListener` API deprecated by the native SDKs.
+
+`LevelPlayAdSize.LEADERBOARD` provides a 728x90 banner alongside the existing standard, large, medium-rectangle, custom, and adaptive sizes.
 
 ### Implement Listeners
 
