@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/ironsource-mobile/LevelPlay-Swift-Package",
-            exact: "9.6.1"
+            exact: "9.7.0"
         ),
         .package(name: "FlutterFramework", path: "../FlutterFramework")
     ],

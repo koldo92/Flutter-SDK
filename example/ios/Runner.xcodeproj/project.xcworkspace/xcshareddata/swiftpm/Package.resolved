@@ -1,13 +1,12 @@
 {
-  "originHash" : "4602236f3bc8514a2b481dadcb0baafa46a22f6d05330d897d5c8e50364b7295",
   "pins" : [
     {
       "identity" : "levelplay-swift-package",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ironsource-mobile/LevelPlay-Swift-Package",
       "state" : {
-        "revision" : "81522d737cfc19539ebbee4425c1dffab0463f53",
-        "version" : "9.6.1"
+        "revision" : "5ecbe0051b514eb1ddcaeec4a98b57212d820bd9",
+        "version" : "9.7.0"
       }
     },
     {
@@ -38,5 +37,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

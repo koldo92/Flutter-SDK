@@ -17,7 +17,7 @@ flutter pub get unity_levelplay_mediation
 
 ## Android Configuration
 
-- The plugin includes LevelPlay Android SDK **9.6.1** and uses Java 17, Kotlin 2.2.20, Android Gradle Plugin 8.11.1, and Gradle 8.14.5. Its native minimum is API 21; the example inherits Flutter 3.47's app minimum (API 24).
+- The plugin includes LevelPlay Android SDK **9.7.0**. Its native minimum is API 21; the example inherits Flutter 3.47's app minimum (API 24).
 
 ### Gradle Dependencies Required
 
@@ -35,7 +35,7 @@ dependencies {
 
 ## iOS Configuration
 
-- The plugin integrates Unity's official [LevelPlay Swift package](https://github.com/ironsource-mobile/LevelPlay-Swift-Package) and resolves native iOS SDK **9.6.1**. Flutter's Swift Package Manager integration is required; CocoaPods is not supported for this plugin.
+- The plugin integrates Unity's official [LevelPlay Swift package](https://github.com/ironsource-mobile/LevelPlay-Swift-Package) and resolves native iOS SDK **9.7.0**. Flutter's Swift Package Manager integration is required; CocoaPods is not supported for this plugin.
 - Requires Flutter 3.47.5 or later, Dart 3.13.4 or later, Xcode 26 or later, and an iOS 15 or later app deployment target. The plugin's SPM target and LevelPlay SDK support iOS 13; Flutter 3.47.5 enables SPM by default and requires iOS 15 for this example app. See [Flutter's plugin author guide](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors).
 - Unity's SPM package supplies the `UnityMediationSDK` product, its Ad Quality dependency, and its required system frameworks and libraries. Do not add a second LevelPlay SDK dependency.
 - Add `-ObjC` to the iOS app target's **Other Linker Flags**, as required by Unity's SPM integration instructions. The example app already sets this flag.
@@ -49,7 +49,7 @@ cd example
 flutter build ios --no-codesign
 ```
 
-The example app uses Swift Package Manager only and has no CocoaPods build steps. Host applications may use CocoaPods for unrelated plugins, but this plugin and LevelPlay SDK must be integrated through Swift Package Manager only. If you use a LevelPlay mediation adapter, add its official Swift package and select a version compatible with LevelPlay 9.6.1. The example uses Unity Ads Adapter 5.11.0 through its [official Swift package](https://github.com/ironsource-mobile/LevelPlay-UnityAds-Adapter-Swift-Package).
+The example app uses Swift Package Manager only and has no CocoaPods build steps. Host applications may use CocoaPods for unrelated plugins, but this plugin and LevelPlay SDK must be integrated through Swift Package Manager only. If you use a LevelPlay mediation adapter, add its official Swift package and select a version compatible with LevelPlay 9.7.0. The example uses Unity Ads Adapter 5.11.0 through its [official Swift package](https://github.com/ironsource-mobile/LevelPlay-UnityAds-Adapter-Swift-Package).
 
 ### <ins>SKAdNetwork Support</ins>
 
@@ -105,7 +105,7 @@ Read more about Apple's ATT and user privacy guideline [here](https://developer.
 
 ## General Usage
 
-### SDK 9.6.1 APIs
+### LevelPlay SDK APIs
 
 Use `LevelPlayPrivacySettings.setGDPRConsent(consent)` to pass the user's consent choice. It replaces the deprecated per-network `setGDPRConsents` API.
 
@@ -424,5 +424,5 @@ Make sure to follow [LevelPlay Knowledge Center](https://developers.ironsrc.com/
 
 Make sure to follow [LevelPlay Knowledge Center](https://developers.ironsrc.com/ironsource-mobile/ios/mediation-networks-ios/) document for additional setup.
 
-- Add each desired network adapter using its official Swift package, at a version compatible with LevelPlay 9.6.1. Do not add a LevelPlay SDK pod or CocoaPod adapter alongside the SPM SDK.
+- Add each desired network adapter using its official Swift package, at a version compatible with LevelPlay 9.7.0. Do not add a LevelPlay SDK pod or CocoaPod adapter alongside the SPM SDK.
 - Add required settings to `YOUR_PROJECT/ios/Runner/info.plist`

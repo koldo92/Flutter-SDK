@@ -1,13 +1,16 @@
 ## 10.0.0
 
 ### Breaking Changes
-- iOS now uses **Swift Package Manager only**. Flutter >= 3.47.5 and Dart >= 3.13.4 are required; CocoaPods integration has been removed, including from the example app.
-- Android builds use Java 17, Kotlin 2.2.20, Android Gradle Plugin 8.11.1, and Gradle 8.14.5 to meet Flutter 3.47 requirements. The plugin native minimum is API 21; the example inherits Flutter's app minimum (API 24).
-- iOS apps must be built with Xcode 26 or later, as required by native SDK 9.6.1.
+- Migrated the plugin to Flutter's Built-in Kotlin support. Removed the explicit Kotlin Gradle Plugin (`org.jetbrains.kotlin.android`) and KGP buildscript classpath from `android/build.gradle`, replacing `kotlinOptions` with `kotlin.compilerOptions` (`jvmTarget = JVM_17`).
+- Removed obsolete Kotlin plugin declarations from `android/settings.gradle`.
+- Updated minimum supported SDK requirements to Flutter >= 3.44.0 and Dart >= 3.12.0 for built-in Kotlin support.
+- Migrated the example app to built-in Kotlin (`android.builtInKotlin=true`), AGP 9.0.1, and Gradle 9.1.0.
+- iOS now uses **Swift Package Manager only**; CocoaPods integration has been removed, including from the example app.
+- iOS apps must be built with Xcode 26 or later, as required by native SDK 9.7.0.
 
 ### SDK Updates
-- Upgraded iOS native SDK to **9.6.1** via official `LevelPlay-Swift-Package`.
-- Upgraded Android native SDK to **9.6.1** via `com.unity3d.ads-mediation:mediation-sdk:9.6.1`.
+- Upgraded iOS native SDK to **9.7.0** via official `LevelPlay-Swift-Package`.
+- Upgraded Android native SDK to **9.7.0** via `com.unity3d.ads-mediation:mediation-sdk:9.7.0`.
 
 ### New Features & Enhancements
 - Integrated upstream Flutter SDK 9.3.0 (`0bc534bd11fb2b348c8dc6f66022f4ff2a8df3da`).
@@ -20,7 +23,6 @@
 - Added Android example build CI and static analysis to the existing iOS SPM workflow.
 
 ### Bug Fixes
-- Declared the standalone Android plugin's Kotlin version in `settings.gradle` so `flutter analyze --suggestions` detects it from the plugin root; CI checks compatibility from both the root and example.
 - Fixed Android activity reattachment after configuration changes so interstitial and rewarded ads can still be shown.
 - Added null-safety protections for `errorMessage`, `placementName`, and `creativeId` in Dart and native iOS serialization.
 - Preserved SPM native ad resource bundle loading.

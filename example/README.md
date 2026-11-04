@@ -16,7 +16,7 @@ flutter build ios --no-codesign
 
 When building from source with Flutter 3.47.5, check out this repository into a directory named `unity_levelplay_mediation`. Flutter currently derives a local SPM package identity from the checkout path for this example's path dependency ([upstream issue](https://github.com/flutter/flutter/issues/186881)); the CI workflow uses that directory name.
 
-The example links Unity Ads Adapter 5.11.0 with Swift Package Manager. Unity's LevelPlay SDK 9.6.1 is supplied by the Flutter plugin package.
+The example links Unity Ads Adapter 5.11.0 with Swift Package Manager. Unity's LevelPlay SDK 9.7.0 is supplied by the Flutter plugin package.
 
 A few resources to get you started if this is your first Flutter project:
 
