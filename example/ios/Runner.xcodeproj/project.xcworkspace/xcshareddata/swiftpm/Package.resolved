@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ironsource-mobile/LevelPlay-Swift-Package",
       "state" : {
-        "revision" : "5ecbe0051b514eb1ddcaeec4a98b57212d820bd9",
-        "version" : "9.7.0"
+        "revision" : "c5dc798c3db4ee94f2c0c69fe6777be20ed795b5",
+        "version" : "9.8.0"
       }
     },
     {

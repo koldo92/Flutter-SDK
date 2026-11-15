@@ -17,6 +17,7 @@
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		F95B4ACD2BF0ECA000940C30 /* NativeAdViewFactoryExample.m in Sources */ = {isa = PBXBuildFile; fileRef = F95B4AC92BF0EC9F00940C30 /* NativeAdViewFactoryExample.m */; };
 		F95B4ACE2BF0ECA000940C30 /* MyCustomNativeAdViewTemplate.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95B4ACB2BF0EC9F00940C30 /* MyCustomNativeAdViewTemplate.xib */; };
+		78A318202AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 78A3181F2AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,9 @@
 		F95B4AC92BF0EC9F00940C30 /* NativeAdViewFactoryExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdViewFactoryExample.m; sourceTree = "<group>"; };
 		F95B4ACA2BF0EC9F00940C30 /* NativeAdViewFactoryExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAdViewFactoryExample.h; sourceTree = "<group>"; };
 		F95B4ACB2BF0EC9F00940C30 /* MyCustomNativeAdViewTemplate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCustomNativeAdViewTemplate.xib; sourceTree = "<group>"; };
+		78E0A7A72DC9AD7400C4905E /* FlutterGeneratedPluginSwiftPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FlutterGeneratedPluginSwiftPackage; path = Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage; sourceTree = "<group>"; };
+		784666492D4C4C64000A1A5F /* FlutterFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FlutterFramework; path = Flutter/ephemeral/Packages/.packages/FlutterFramework; sourceTree = "<group>"; };
+		78DABEA22ED26510000E7860 /* unity_levelplay_mediation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = unity_levelplay_mediation; path = ../../ios/unity_levelplay_mediation; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A318202AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage in Frameworks */,
 				A10000000000000000000003 /* UnityAdsAdapter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +79,9 @@
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
+				78DABEA22ED26510000E7860 /* unity_levelplay_mediation */,
+				784666492D4C4C64000A1A5F /* FlutterFramework */,
+				78E0A7A72DC9AD7400C4905E /* FlutterGeneratedPluginSwiftPackage */,
 				3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */,
 				9740EEB21CF90195004384FC /* Debug.xcconfig */,
 				7AFA3C8E1D35360C0083082E /* Release.xcconfig */,
@@ -146,6 +154,7 @@
 			dependencies = (
 			);
 			packageProductDependencies = (
+				78A3181F2AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage */,
 				A10000000000000000000001 /* UnityAdsAdapter */,
 			);
 			name = Runner;
@@ -178,6 +187,7 @@
 			);
 			mainGroup = 97C146E51CF9000F007C117D;
 			packageReferences = (
+				781AD8BC2B33823900A9FFBB /* XCLocalSwiftPackageReference "Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage" */,
 				A10000000000000000000002 /* XCRemoteSwiftPackageReference "LevelPlay-UnityAds-Adapter-Swift-Package" */,
 			);
 			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
@@ -542,6 +552,10 @@
 			package = A10000000000000000000002 /* XCRemoteSwiftPackageReference "LevelPlay-UnityAds-Adapter-Swift-Package" */;
 			productName = UnityAdsAdapter;
 		};
+		78A3181F2AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FlutterGeneratedPluginSwiftPackage;
+		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCConfigurationList section */
@@ -566,6 +580,12 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+/* Begin XCLocalSwiftPackageReference section */
+		781AD8BC2B33823900A9FFBB /* XCLocalSwiftPackageReference "Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage;
+		};
+/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 97C146E61CF9000F007C117D /* Project object */;
 }

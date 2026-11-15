@@ -1,4 +1,6 @@
 import 'dart:io' show Platform;
+// The example uses Flutter's bundled Material library for compatibility.
+// ignore: deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unity_levelplay_mediation/unity_levelplay_mediation.dart';
@@ -91,7 +93,7 @@ class _MyAppState extends State<MyApp>
   Future<void> init() async {
 
     try {
-      LevelPlay.setFlutterVersion('3.47.5');
+      LevelPlay.setFlutterVersion('3.50.0');
       LevelPlay.addImpressionDataListener(this);
       await enableDebug();
 

@@ -22,12 +22,14 @@ jobs:
         with:
           channel: stable
 
-      - name: Check plugin and example Android compatibility
+      - name: Check example Android compatibility
         run: |
           python3 - <<'PY'
           import subprocess
 
-          for directory in ('.', 'example'):
+          # Flutter's standalone plugin check does not detect AGP built-in Kotlin.
+          # The example build exercises the plugin with the app's actual toolchain.
+          for directory in ('example',):
               result = subprocess.run(
                   ['flutter', 'analyze', '--suggestions'],
                   cwd=directory, text=True, stdout=subprocess.PIPE,

@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.11.1'
+        classpath 'com.android.tools.build:gradle:9.3.1'
     }
 }
 
@@ -24,7 +24,7 @@ apply plugin: 'com.android.library'
 android {
     namespace = "com.unity3d.flutter"
 
-    compileSdk = 35
+    compileSdk = 36
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -46,5 +46,5 @@ kotlin {
 }
 
 dependencies {
-    api 'com.unity3d.ads-mediation:mediation-sdk:9.7.0'
+    api 'com.unity3d.ads-mediation:mediation-sdk:9.8.0'
 }

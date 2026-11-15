@@ -1,3 +1,9 @@
+## Unreleased
+
+- Upgraded the Android and iOS LevelPlay SDKs to 9.8.0.
+- Incorporated the upstream iOS multiple-engine registration and plugin framework version fixes.
+- Updated the minimum requirements to Flutter 3.50 and Dart 3.14, and aligned Android builds with AGP 9.3.1 and Gradle 9.5.0.
+
 ## 10.0.0
 
 ### Breaking Changes
